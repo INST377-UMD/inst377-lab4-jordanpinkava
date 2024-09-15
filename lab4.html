@@ -1,0 +1,65 @@
+<html>
+   <head>
+      <title>Lab 4</title>
+      <link rel = "stylesheet" href = "lab4.css">
+   </head>
+   <body>
+      <h1 id = "header">INST377 - Lab 4</h1>
+      <!--Box 1--sending alert-->
+      <form name = "nameForm">
+         <input type = "text" placeholder = "Name" id = "firstName" required>
+         <input type = "submit">
+      </form>
+         <h2 id = "alertButton">Name for ALert Button</h2>
+         <button onclick ="sendAlert()">SEND ALERT</button>
+      <script type = "text/javascript">
+         function sendAlert() {
+            alert("Hi Name")
+         }
+      </script>
+      
+      <!--Box 2--validating text-->
+      <form name = "verifyForm" onsubmit="return(validateText())">
+         <input type = "text" placeholder = "Text" id = "verifyForm" required>
+         <input type = "submit">
+      </form>
+      <h2 id = "validation">Validate text here</h2>
+      <button onclick="validateText()">VALIDATE TEXT HERE</button>
+      <script type = "text/javascript">
+         function validateText(){
+               if(document.verifyForm.verifyForm.value === "") {
+                    alert('Enter Text, please');
+                    return false;
+                }
+                if (validationRegex.test(document.verifyForm.VerifyForm.value)) {
+                    alert('How about.... nah :(')
+                    return false;
+                }
+
+                return true;
+            }
+      </script>
+
+      <!--Box 3--changing page color-->
+      <h2 id = "changeColor">change the page color here</h2>
+      <button onclick ="changeColor()">CHANGE COLOR</button>
+      <script type = "text/javascript">
+         function changeColor() {
+            if(document.getElementById('header').style.color == "purple") {
+               const t = document.getElementById('header').style.color = "black";
+            } else {
+            const t = document.getElementById('header').style.color = "purple";
+            }
+            console.log("element is", t)
+         }
+      </script>
+      <!--Box 4--adding text-->
+      <h2 id = "addText">Add text here</h2>
+      <button onclick="addText()">ADD TEXT HERE</button>
+      <script type = "text/javascript">
+         function addText(){
+
+         }
+      </script>
+   </body>
+</html>
