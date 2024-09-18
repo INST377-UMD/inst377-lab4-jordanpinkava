@@ -6,4 +6,30 @@ body {
    color: black;
    padding: 10;
    border: 2px solid black;
+   width: 45%;
+   float: left;
+}
+.validate{
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid black;
+   width: 45%;
+   float: right;
+}
+.colorChanger{
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid black;
+   width: 45%;
+   float: right;
+}
+.textAdder{
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid black;
+   width: 45%;
+   float: left;
 }
