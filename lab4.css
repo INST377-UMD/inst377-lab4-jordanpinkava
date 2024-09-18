@@ -1,3 +1,9 @@
 body {
    background-color: aquamarine;
 }
+.name {
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid black;
+}
