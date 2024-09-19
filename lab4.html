@@ -3,57 +3,59 @@
       <title>Lab 4</title>
       <link rel = "stylesheet" href = "lab4.css">
    </head>
-   <body>
+   <body id = "body">
       <h1 id = "header">INST377 - Lab 4</h1>
       <!--Box 1--sending alert-->
       <div class = "name">
-         <form name = "nameForm">
-            <label for = "firstName">Name: </label>
-            <input type = "text" placeholder = "Name" id = "firstName" required>
-            <input type = "submit">
-         </form>
-            <h2 id = "alertButton">Name for Alert Button</h2>
-            <button onclick ="sendAlert()">SEND ALERT</button>
+            <h2>Alert Button</h2>
          <script type = "text/javascript">
             function sendAlert() {
-               alert("Hi Name")
+               const name = document.getElementById('firstName').value;
+               if (name) {
+                  alert(`Hi ${name}!`)}
             }
          </script>
+         <form name = "nameForm" onsubmit="sendAlert();">
+            <label for = "firstName">Name: </label>
+            <input type = "text" placeholder = "Name" id = "firstName" required>
+            <button type = "submit">ALERT ME!</button>
+         </form>
       </div>
       <!--Box 2--validating text-->
       <div class = "validate">
-         <form name = "verifyForm" onsubmit="return(validateText())">
-            <label for = "verifyForm">Text Tester</label>
-            <input type = "text" placeholder = "Text" id = "verifyForm" required>
-            <input type = "submit">
+         <h2 id = "validation">Validate Text</h2>
+         <form name = "verifyForm" onsubmit="return validateText();">
+            <label for = "textInput">Text Tester</label>
+            <input type = "text" placeholder = "Text" id = "textInput">
+            <button type = "submit" >TEST ME</button>
          </form>
-         <h2 id = "validation">Validate text here</h2>
-         <button onclick="validateText()">VALIDATE TEXT HERE</button>
          <script type = "text/javascript">
-            function validateText(){
-                  if(document.verifyForm.verifyForm.value === "") {
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            function validateText() {
+                  const text = document.verifyForm.textInput.value;
+                  if(text === "") {
                      alert('Enter Text, please');
                      return false;
                   }
-                  if (validationRegex.test(document.verifyForm.VerifyForm.value)) {
-                     alert('How about.... nah :(')
+                  if (validation.test(text)) {
+                     alert('This Text is Not Valid');
                      return false;
                   }
-
+                  alert('This Text is valid!');
                   return true;
                }
          </script>
       </div>
       <!--Box 3--changing page color-->
       <div class = "colorChanger">
-         <h2 id = "changeColor">change the page color here</h2>
+         <h2 id = "changeColor">Change the Color of the Page</h2>
          <button onclick ="changeColor()">CHANGE COLOR</button>
          <script type = "text/javascript">
             function changeColor() {
-               if(document.getElementById('header').style.color == "purple") {
-                  const t = document.getElementById('header').style.color = "black";
+               if(document.body.style.backgroundColor == "blue") {
+                  const t = document.body.style.backgroundColor = "purple";
                } else {
-               const t = document.getElementById('header').style.color = "purple";
+               const t = document.body.style.backgroundColor = "blue";
                }
                console.log("element is", t)
             }
@@ -61,11 +63,12 @@
       </div>
       <!--Box 4--adding text-->
       <div class = "textAdder">
-         <h2 id = "addText">Add text here</h2>
+         <h2>Add text here</h2>
          <button onclick="addText()">ADD TEXT HERE</button>
          <script type = "text/javascript">
             function addText(){
-
+               const heading = document.getElementById('header');
+               heading.textContent += ' - Text has been added';
             }
          </script>
       </div>
