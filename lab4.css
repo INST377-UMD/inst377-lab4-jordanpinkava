@@ -1,0 +1,39 @@
+body {
+   background-color: blue;
+}
+.name {
+   background-color: rgb(182, 106, 197);
+   color: rgb(0, 0, 0);
+   padding: 10;
+   border: 2px solid white;
+   width: 45%;
+   float: left;
+   margin: 10;
+}
+.validate{
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid white;
+   width: 45%;
+   float: right;
+   margin: 10;
+}
+.colorChanger{
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid white;
+   width: 45%;
+   float: right;
+   margin: 10;
+}
+.textAdder{
+   background-color: rgb(182, 106, 197);
+   color: black;
+   padding: 10;
+   border: 2px solid white;
+   width: 45%;
+   float: left;
+   margin: 10;
+}

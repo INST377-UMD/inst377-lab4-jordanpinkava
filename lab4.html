@@ -1,0 +1,76 @@
+<html>
+   <head>
+      <title>Lab 4</title>
+      <link rel = "stylesheet" href = "lab4.css">
+   </head>
+   <body id = "body">
+      <h1 id = "header">INST377 - Lab 4</h1>
+      <!--Box 1--sending alert-->
+      <div class = "name">
+            <h2>Alert Button</h2>
+         <script type = "text/javascript">
+            function sendAlert() {
+               const name = document.getElementById('firstName').value;
+               if (name) {
+                  alert(`Hi ${name}!`)}
+            }
+         </script>
+         <form name = "nameForm" onsubmit="sendAlert();">
+            <label for = "firstName">Name: </label>
+            <input type = "text" placeholder = "Name" id = "firstName" required>
+            <button type = "submit">ALERT ME!</button>
+         </form>
+      </div>
+      <!--Box 2--validating text-->
+      <div class = "validate">
+         <h2 id = "validation">Validate Text</h2>
+         <form name = "verifyForm" onsubmit="return validateText();">
+            <label for = "textInput">Text Tester</label>
+            <input type = "text" placeholder = "Text" id = "textInput">
+            <button type = "submit" >TEST ME</button>
+         </form>
+         <script type = "text/javascript">
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            function validateText() {
+                  const text = document.verifyForm.textInput.value;
+                  if(text === "") {
+                     alert('Enter Text, please');
+                     return false;
+                  }
+                  if (validation.test(text)) {
+                     alert('This Text is Not Valid');
+                     return false;
+                  }
+                  alert('This Text is valid!');
+                  return true;
+               }
+         </script>
+      </div>
+      <!--Box 3--changing page color-->
+      <div class = "colorChanger">
+         <h2 id = "changeColor">Change the Color of the Page</h2>
+         <button onclick ="changeColor()">CHANGE COLOR</button>
+         <script type = "text/javascript">
+            function changeColor() {
+               if(document.body.style.backgroundColor == "blue") {
+                  const t = document.body.style.backgroundColor = "purple";
+               } else {
+               const t = document.body.style.backgroundColor = "blue";
+               }
+               console.log("element is", t)
+            }
+         </script>
+      </div>
+      <!--Box 4--adding text-->
+      <div class = "textAdder">
+         <h2>Add text here</h2>
+         <button onclick="addText()">ADD TEXT HERE</button>
+         <script type = "text/javascript">
+            function addText(){
+               const heading = document.getElementById('header');
+               heading.textContent += ' - Text has been added';
+            }
+         </script>
+      </div>
+   </body>
+</html>
